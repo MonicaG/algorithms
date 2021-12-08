@@ -149,16 +149,16 @@ class TestTrie(unittest.TestCase):
 
         assert " and " in t
 
-    def test_dictionary(self):
-        t = trie.Trie()
-        with open('/usr/share/dict/words') as f:
-            for line in f:
-                t.insert(line)
-
-        words = t.get_all_words()
-        with open('/usr/share/dict/words') as f:
-            for line in f:
-                if line not in words:
-                    print(line)
+    # def test_dictionary(self):
+    #     t = trie.Trie()
+    #     with open('/usr/share/dict/words') as f:
+    #         for line in f:
+    #             t.insert(line)
+    #
+    #     words = t.get_all_words()
+    #     with open('/usr/share/dict/words') as f:
+    #         for line in f:
+    #             if line not in words:
+    #                 print(line)
 
 
