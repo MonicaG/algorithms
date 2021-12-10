@@ -11,9 +11,9 @@ Some notes:
     * Example: an algorithm of O(2n) becomes O(n). Because the growth is determined by n, not the constant 2. 
 * Big O categories, from fastest growth rate (bad) to slowest growth rate(good):
   * O(n!)
-    * Listing all permutations of an array
+    * ex: Listing all permutations of an array
   * O(2<sup>n</sup>)
-    * Recursive Fibonacci
+    * ex: Recursive Fibonacci
   * O(n<sup>2</sup>)
     * ex: Bubble Sort, Insertion Sort 
   * O(n log(n))
@@ -21,7 +21,7 @@ Some notes:
   * O(n)
     * ex: iterating over an array
   * O(log(n))
-    * Binary search on sorted array
+    * ex: Binary search on sorted array
   * O(1)
     * ex: Accessing an array element
 
