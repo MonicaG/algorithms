@@ -13,15 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python 3.10.0
-        uses: actions/setup-python@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Python, pipenv and Pipfile packages
+        uses: palewire/install-python-pipenv-pipfile@v2
         with:
           python-version: 3.x
-      - name: Install pipenv
-        run: pip install pipenv
       - name: Run tests
         run: |
           pipenv install --dev
-          pipenv run python -m pytest
+          pipenv run pytest
 
