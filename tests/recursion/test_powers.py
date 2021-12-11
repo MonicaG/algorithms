@@ -1,5 +1,5 @@
 import unittest
-from algorithms import powers
+from algorithms.recursion import powers
 
 
 class TestPowers(unittest.TestCase):
