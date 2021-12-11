@@ -23,6 +23,5 @@ jobs:
       - name: Run tests
         run: |
           pipenv install --dev
-          pipenv run pytest
-          pip install pytest-cov
-          pytest -vv  
+          pipenv run python -m pytest
+
