@@ -1,3 +1,4 @@
+![Algorithms Tests](https://github.com/MonicaG/algorithms/actions/workflows/main.yml/badge.svg)
 # Algorithms
 This is my scratch pad for trying out algorithms.
 
