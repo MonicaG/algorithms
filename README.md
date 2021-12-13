@@ -1,4 +1,4 @@
-![Algorithms Tests](https://github.com/MonicaG/algorithms/actions/workflows/main.yml/badge.svg)
+[![Algorithms Tests](https://github.com/MonicaG/algorithms/actions/workflows/main.yml/badge.svg)](https://github.com/MonicaG/algorithms/actions/workflows/main.yml)
 # Algorithms
 This is my scratch pad for trying out algorithms.
 
