@@ -8,7 +8,7 @@ Generally accomplished with either memoization or 'going bottom up'.
 
 Memoization is reducing the recursive calls by storing the result of a function call. That result is returned rather than recursing down the branches.
 
-A typical example is the fibonacci sequence (0, 1, 1, 2 3, 4, 8, 13, 21, 34, 55 ...).
+A typical example is the fibonacci sequence (0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...).
 
 A naive implementation is:
 ```python

@@ -1,7 +1,7 @@
-from algorithms.recursion import powers
+from algorithms.recursion.powers import recursive_power
 
 
 def test_powers():
-    assert powers.recursive_power(5, 0) == 1
-    assert powers.recursive_power(5, 1) == 5
-    assert powers.recursive_power(5, 2) == 25
+    assert recursive_power(5, 0) == 1
+    assert recursive_power(5, 1) == 5
+    assert recursive_power(5, 2) == 25
