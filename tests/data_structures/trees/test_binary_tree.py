@@ -1,4 +1,4 @@
-from algorithms.trees.binary_tree import BinaryTree, Node
+from data_structures.trees.binary_tree import BinaryTree
 
 
 def test_binary_tree_insert():

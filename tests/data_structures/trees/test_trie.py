@@ -1,5 +1,5 @@
 import unittest
-from algorithms.trees import trie
+from data_structures.trees import trie
 
 
 class TestTrie(unittest.TestCase):
