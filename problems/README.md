@@ -13,7 +13,7 @@ These are some techniques used in approaching problems:
 * [Sliding Window](https://quanticdev.com/algorithms/dynamic-programming/sliding-window/)
 
 #### Questions:
-* [q3_longest_substring.py](q3_longest_substring.py)
+* [q3_longest_substring.py](leetcode/q3_longest_substring.py)
   
 ### Expand around the center
 * Used for palindromes. The concept is the palindrome has a center point and you expand left and right pointers out from the center point. At each movement you check the values of left and right positions equal each other or not. This is similar to the sliding window concept above.
@@ -23,4 +23,4 @@ These are some techniques used in approaching problems:
 * [youtube](https://www.youtube.com/watch?v=LgG2Km9GvJw)
       
 #### Questions:
-* [q5_longest_palindromic.substring.py](q5_longest_palindromic_substring.py)
+* [q5_longest_palindromic.substring.py](leetcode/q5_longest_palindromic_substring.py)
