@@ -11,3 +11,8 @@ A binary search tree is a binary tree that has these properties:
 - The right descendants must only contain values that are greater than the node
   
 <a title="No machine-readable author provided. Dcoetzee assumed (based on copyright claims)., Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Binary_search_tree.svg"><img width="256" alt="Binary search tree" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/256px-Binary_search_tree.svg.png"></a>
+
+## Trie
+- A kind of tree that is good for text-based features such as autocomplete
+- It is **NOT** a binary tree. It can have multiple child nodes.
+- 
