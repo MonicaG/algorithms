@@ -1,5 +1,4 @@
 class MaxHeap:
-    __NOT_FOUND__ = -99
 
     def __init__(self):
         self.__data = []
@@ -25,32 +24,28 @@ class MaxHeap:
     def pop(self):
         removed_item = self.__data[0]
         trickle_item = self.__data.pop()
-        trickle_item_index = 0
-        if len(self.__data) > 0:
+        if self.__data:
             self.__data[0] = trickle_item
-            # re-evaluate this. Maybe can do with iterating over array instead of doing the multiple checks
-            while self.__has_larger_child(trickle_item_index):
-                largest_child_index = self.__get_largest_child_index(trickle_item_index)
-                self.__data[trickle_item_index], self.__data[largest_child_index] = self.__data[largest_child_index], self.__data[trickle_item_index]
-
+            self.__trickle(0)
         return removed_item
 
-    def __has_larger_child(self, trickle_item_index):
-        index = self.__get_largest_child_index(trickle_item_index)
-        if index == MaxHeap.__NOT_FOUND__:
-            return False
-        else:
-            return self.__data[trickle_item_index] < self.__data[index]
-
-    def __get_largest_child_index(self, trickle_item_index):
-        right_index = self.__right_child_index(trickle_item_index)
-        left_index = self.__left_child_index(trickle_item_index)
-        if right_index < len(self.__data):
-            return right_index if self.__data[right_index] > self.__data[left_index] else left_index
-        elif left_index < len(self.__data):
-            return left_index
-        else:
-            return MaxHeap.__NOT_FOUND__
+    def __trickle(self, position):
+        end_position = len(self.__data)
+        did_trickle = True
+        while position < end_position and did_trickle:
+            left_child_index = self.__left_child_index(position)
+            right_child_index = self.__right_child_index(position)
+            index = end_position
+            if right_child_index < end_position:
+                index = right_child_index if self.__data[right_child_index] > self.__data[left_child_index] \
+                    else left_child_index
+            elif left_child_index < end_position:
+                index = left_child_index
+            if index < end_position and self.__data[position] < self.__data[index]:
+                self.__data[position], self.__data[index] = self.__data[index], self.__data[position]
+            else:
+                did_trickle = False
+            position = index
 
     def insert(self, value):
         self.__data.append(value)
