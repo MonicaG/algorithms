@@ -16,7 +16,7 @@ These are some techniques used in approaching problems:
 * [q3_longest_substring.py](q3_longest_substring.py)
   
 ### Expand around the center
-* Used for palindromes. The concept is the palindrome has a center point and you expand left and right pointers out from the center point. At each movement you check that the left and right positions equal each other or not. This is similar to the sliding window concept above.
+* Used for palindromes. The concept is the palindrome has a center point and you expand left and right pointers out from the center point. At each movement you check the values of left and right positions equal each other or not. This is similar to the sliding window concept above.
 
 #### Reference:
 * [longest-palindromic-substring](https://medium.com/@bhprtk/longest-palindromic-substring-a8190fab03ff) 
