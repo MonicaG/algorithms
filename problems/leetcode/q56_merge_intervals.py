@@ -3,9 +3,9 @@ from typing import List
 """
 56. merge intervals: https://leetcode.com/problems/merge-intervals/
 What I learned: to merge items, add first item to the result. Then iterate through the list and either update the tail 
-item or append a new item. This is easier than trying to handle the merge by taking two items from the array, merging 
-them and then inserting into the array. Which was convoluted when I needed to then compare the merged item to the next
-item in the array.
+item in the result or append a new item to the result. This is easier than trying to handle the merge by taking two 
+items from the array, merging  them and then inserting into the array. Which was convoluted when I needed to then 
+compare the merged item to the next item in the array.
 I figured out that I needed to sort the array in order to compare the items. 
 """
 
