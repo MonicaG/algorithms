@@ -24,3 +24,9 @@ These are some techniques used in approaching problems:
       
 #### Questions:
 * [q5_longest_palindromic.substring.py](leetcode/q5_longest_palindromic_substring.py)
+
+### Two Pointers
+When the brute force solution is nested arrays, see if a O(n) solution can be obtained using two pointers.
+
+#### Questions:
+* [q11_container_with_most_water.py](leetcode/q11_container_with_most_water.py)
