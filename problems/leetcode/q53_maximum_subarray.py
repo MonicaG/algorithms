@@ -37,3 +37,24 @@ class Solution:
             high_sum = max(current_sum, high_sum)
         return high_sum
 
+    def maxSubArray_brute(self, nums: List[int]) -> int:
+        high_sum = 0
+        for i in range(len(nums)):
+            current_sum = 0
+            for j in range(i, len(nums)):
+                current_sum += nums[j]
+                if current_sum < 0:
+                    current_sum = 0
+                high_sum = max(high_sum, current_sum)
+        return high_sum
+
+    def kadane_original(self, nums: List[int]) -> int:
+        high_sum = 0
+        current_sum = 0
+        for i in nums:
+            current_sum = max(0, current_sum + i)
+            high_sum = max(high_sum, current_sum)
+        return high_sum
+
+
+

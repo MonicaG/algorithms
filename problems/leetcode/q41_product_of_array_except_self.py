@@ -21,3 +21,23 @@ class Solution:
             tally *= nums[i + 1]
             answer[i] = answer[i] * tally
         return answer
+
+    def productExceptSelf_multipleArrays(self, nums: List[int]) -> List[int]:
+        left = [1] * len(nums)
+        right = [1] * len(nums)
+        answer = [1] * len(nums)
+
+        # [2, 3, 4, 5]
+        for i in range(1, len(nums)):
+            left[i] = nums[i-1] * left[i-1]
+        # left_Side = [1,2, 6, 24]
+        for i in range(len(nums) - 2, -1, -1):
+            right[i] = nums[i+1] * right[i+1]
+            answer[i] = right[i] * left[i]
+        # right = [60, 20, 5, 1]
+        for i in range(len(nums)):
+            answer[i] = left[i] * right[i]
+
+        return answer
+
+

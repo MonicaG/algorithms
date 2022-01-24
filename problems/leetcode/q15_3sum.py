@@ -36,12 +36,10 @@ class Solution:
                     result.append([a, b, c])
                     # the while loops is what lets us use an array rather than a set to store the result (since
                     # duplicates are not allowed). Here duplicate numbers are skipped by.
-                    while start < end and nums[start] == nums[start + 1]:
+                    while start < end and b == nums[start]:
                         start += 1
-                    while start < end and nums[end] == nums[end - 1]:
+                    while start < end and c == nums[end]:
                         end -= 1
-                    start += 1
-                    end -= 1
                 elif summ > 0:
                     end -= 1
                 else:
@@ -51,10 +49,11 @@ class Solution:
 
     def threeSum_uses_set(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
+        # A set is used so that only unique results are stored.
         result = set()
         for i in range(len(nums) - 2):
             a = nums[i]
-            #skip duplicate numbers
+            # skip duplicate numbers
             if i > 0 and a == nums[i - 1]:
                 continue
             start = i + 1
