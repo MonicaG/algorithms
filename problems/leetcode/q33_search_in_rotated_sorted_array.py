@@ -4,20 +4,23 @@ from typing import List
 class Solution:
 
     def search_recursive(self, nums: List[int], target: int) -> int:
+        # re-implemented the iterative solution as a recursive solution.
         def recurse(left, right) -> int:
             if left > right:
                 return -1
             mid = (right + left) // 2
             if target == nums[mid]:
                 return mid
-            if nums[mid] < nums[right]:
-                if nums[mid] <= target <= nums[right]:
+            if nums[mid] > nums[right]:
+                if target > nums[mid] or target < nums[left]:
+                    return recurse(mid+1, right)
+                else:
+                    return recurse(left, mid - 1)
+            else:
+                if target < nums[mid] or target > nums[right]:
+                    return recurse(left, mid - 1)
+                else:
                     return recurse(mid + 1, right)
-                return recurse(left, mid - 1)
-            if nums[mid] >= target >= nums[left]:
-                return recurse(left, mid - 1)
-            return recurse(mid + 1, right)
-
         return recurse(0, len(nums) - 1)
 
     def search(self, nums: List[int], target: int) -> int:
