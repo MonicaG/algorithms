@@ -21,6 +21,8 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        if not head or not head.next:
+            return False
         walker = head
         runner = head
         while runner and runner.next:

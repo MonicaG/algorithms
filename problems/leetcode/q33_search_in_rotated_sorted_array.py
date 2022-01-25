@@ -37,7 +37,7 @@ class Solution:
                     # Example: [5, 6, 7, 8, 9, 0, 1, 2, 3, 4]
                     # Assume mid point is index 2 (value 7). We need to search to the right of the mid point for the
                     # cases: 1) the target is greater than the mid (i.e. target is 9) or 2) the target is less than
-                    # the mid point, and the value is actually on the right side of the array (i.e. target is 3)
+                    # the mid point, but the value is actually on the right side of the array (i.e. target is 3)
                     left = mid + 1
                 else:
                     # This scenario is reached when we just need to search the left side of the array. This occurs when
