@@ -1,4 +1,4 @@
-from algorithms.binary_search import binary_search, binary_search_recursive
+from algorithms.search.binary_search import binary_search, binary_search_recursive
 
 
 def test():
