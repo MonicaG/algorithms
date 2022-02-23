@@ -67,3 +67,36 @@ class BinaryTree:
                 node.right_child = Node(value)
             else:
                 self.__insert(value, node.right_child)
+
+    def delete(self, value):
+        self.__delete(value, self.root)
+
+    def __delete(self, value, node):
+        if node is None:
+            return None
+        elif value < node.value:
+            self.__delete(value, node.left_child)
+            return node
+        elif value > node.value:
+            self.__delete(value, node.right_child)
+            return node
+        else:
+            # value == node.value
+            if node.left_child is None:
+                return node.right_child
+            elif node.right_child is None:
+                return node.left_child
+            else:
+                node.right_child = self.__lift(node.right_child, node)
+                return node
+
+    def __lift(self, node, nodeToDelete):
+        if node.left_child:
+            node.left_child = self.__lift(node.left_child, nodeToDelete)
+            return node
+        else:
+            nodeToDelete.value = node.value
+            return node.right_child
+
+
+
