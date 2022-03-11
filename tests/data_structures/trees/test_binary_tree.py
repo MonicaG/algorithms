@@ -10,10 +10,10 @@ def test_binary_tree_insert():
     bt.insert(7)
 
     assert bt.root.value == 10
-    assert bt.root.left_child.value == 5
-    assert bt.root.right_child.value == 15
-    assert bt.root.right_child.left_child.value == 12
-    assert bt.root.left_child.right_child.value == 7
+    assert bt.root.left.value == 5
+    assert bt.root.right.value == 15
+    assert bt.root.right.left.value == 12
+    assert bt.root.left.right.value == 7
 
 
 def test_find_greatest_value():
@@ -31,4 +31,3 @@ def test_find_greatest_value():
 
     bt2 = BinaryTree()
     assert bt2.find_greatest_value() is None
-

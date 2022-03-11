@@ -1,11 +1,4 @@
-class Node:
-    def __init__(self, val, left=None, right=None):
-        self.value = val
-        self.left_child = left
-        self.right_child = right
-
-    def __repr__(self):
-        return f'Node({self.value}, {self.left_child}, {self.right_child})'
+from data_structures.trees.TreeNode import TreeNode
 
 
 class BinaryTree:
@@ -21,9 +14,9 @@ class BinaryTree:
     def __print_tree_inorder(self, node):
         if node is None:
             return
-        self.__print_tree_inorder(node.left_child)
+        self.__print_tree_inorder(node.left)
         print(node.value)
-        self.__print_tree_inorder(node.right_child)
+        self.__print_tree_inorder(node.right)
 
     def print_tree_preorder(self):
         self.__print_tree_preorder(self.root)
@@ -33,8 +26,8 @@ class BinaryTree:
             return
         else:
             print(node.value)
-            self.__print_tree_preorder(node.left_child)
-            self.__print_tree_preorder(node.right_child)
+            self.__print_tree_preorder(node.left)
+            self.__print_tree_preorder(node.right)
 
     def empty(self):
         return self.root is None
@@ -45,28 +38,28 @@ class BinaryTree:
     def __find_greatest_value(self, node):
         if node is None:
             return None
-        elif node.right_child is None:
+        elif node.right is None:
             return node.value
         else:
-            return self.__find_greatest_value(node.right_child)
+            return self.__find_greatest_value(node.right)
 
     def insert(self, value):
         self.__insert(value, self.root)
 
     def __insert(self, value, node=None):
         if self.empty():
-            self.root = Node(value)
+            self.root = TreeNode(value)
             return
         elif value < node.value:
-            if node.left_child is None:
-                node.left_child = Node(value)
+            if node.left is None:
+                node.left = TreeNode(value)
             else:
-                self.__insert(value, node.left_child)
+                self.__insert(value, node.left)
         elif value > node.value:
-            if node.right_child is None:
-                node.right_child = Node(value)
+            if node.right is None:
+                node.right = TreeNode(value)
             else:
-                self.__insert(value, node.right_child)
+                self.__insert(value, node.right)
 
     def delete(self, value):
         self.__delete(value, self.root)
@@ -75,28 +68,28 @@ class BinaryTree:
         if node is None:
             return None
         elif value < node.value:
-            self.__delete(value, node.left_child)
+            self.__delete(value, node.left)
             return node
         elif value > node.value:
-            self.__delete(value, node.right_child)
+            self.__delete(value, node.right)
             return node
         else:
             # value == node.value
-            if node.left_child is None:
-                return node.right_child
-            elif node.right_child is None:
-                return node.left_child
+            if node.left is None:
+                return node.right
+            elif node.right is None:
+                return node.left
             else:
-                node.right_child = self.__lift(node.right_child, node)
+                node.right = self.__lift(node.right, node)
                 return node
 
     def __lift(self, node, nodeToDelete):
-        if node.left_child:
-            node.left_child = self.__lift(node.left_child, nodeToDelete)
+        if node.left:
+            node.left = self.__lift(node.left, nodeToDelete)
             return node
         else:
             nodeToDelete.value = node.value
-            return node.right_child
+            return node.right
 
 
 
