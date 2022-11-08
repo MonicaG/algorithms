@@ -1,6 +1,7 @@
+from typing import List
 # Short circuit BubbleSort implementation. If no elements are swapped then we know the list is sorted.
 # In this case we do not need to do anymore passes of the array and can exit the algorithm
-def bubble_sort(nums: [int]):
+def bubble_sort(nums: List[int]):
     did_swap_elements = True
     # subtract one here so we don't have to worry about index out of bounds error when using the right_item_index below
     end_range = len(nums) - 1
@@ -16,7 +17,7 @@ def bubble_sort(nums: [int]):
     return nums
 
 
-def selection_sort(nums: [int]):
+def selection_sort(nums: List[int]):
     # 1 is subtracted from the len(nums) because by the last element, the array will be sorted. So don't need to
     # process it again.
     for start_index in range(len(nums) - 1):
@@ -30,7 +31,7 @@ def selection_sort(nums: [int]):
     return nums
 
 
-def insertion_sort(nums: [int]):
+def insertion_sort(nums: List[int]):
     for index in range(1, len(nums)):
         temp = nums[index]
         check_index = index - 1
